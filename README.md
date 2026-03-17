@@ -1,3 +1,6 @@
+# wav2lip-onnx-HQ web server pointing to tensorrt
+code points to tensorrt  versions of wav2lip. used in conjunction with talking-avatar repository.  Modified instant-high's wav2lip-ONNX-HQ code for this repo. https://github.com/instant-high/wav2lip-onnx-HQ
+
 # wav2lip-onnx-HQ
 
 Update 09.06.2025
