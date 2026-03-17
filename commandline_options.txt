@@ -1,0 +1,29 @@
+('--checkpoint_path', type=str, help='Name of saved checkpoint to load weights from', required=True)
+('--face', type=str, help='Filepath of video/image that contains faces to use', required=True)
+('--audio', type=str, help='Filepath of video/audio file to use as raw audio source', required=True)
+('--denoise', default=False, action="store_true", help="Denoise input audio to avoid unwanted lipmovement")
+('--outfile', type=str, help='Video path to save result. See default for an e.g.', default='results/result_voice.mp4')
+('--hq_output', default=False, action='store_true',help='HQ output')
+
+('--static', default=False, action='store_true', help='If True, then use only first video frame for inference')
+('--pingpong', default=False, action='store_true',help='pingpong loop if audio is longer than video')
+
+('--cut_in', type=int, default=0, help="Frame to start inference")
+('--cut_out', type=int, default=0, help="Frame to end inference")
+('--fade', action="store_true", help="Fade in/out")
+
+('--fps', type=float, help='Can be specified only if input is a static image (default: 25)', default=25., required=False)
+('--resize_factor', default=1, type=int, help='Reduce the resolution by this factor. Sometimes, best results are obtained at 480p or 720p')
+
+('--enhancer', default='none', choices=['none', 'gpen', 'gfpgan', 'codeformer', 'restoreformer'])
+('--blending', default=10, type=float, help='Amount of face enhancement blending 1 - 10')
+('--sharpen', default=False, action="store_true", help="Slightly sharpen swapped face")
+('--frame_enhancer', action="store_true", help="Use frame enhancer")
+
+('--face_mask', action="store_true", help="Use face mask")
+('--face_occluder', action="store_true", help="Use x-seg occluder face mask")
+
+('--pads', type=int, default=4, help='Padding top, bottom to adjust best mouth position, move crop up/down, between -15 to 15') # pos value mov synced mouth up
+('--face_mode', type=int, default=0, help='Face crop mode, 0 or 1, rect or square, affects mouth opening' )
+
+('--preview', default=False, action='store_true', help='Preview during inference')
